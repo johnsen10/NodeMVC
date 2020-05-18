@@ -6,7 +6,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
-    "express-mvc-generator": "^2.2.4"
+    "express-mvc-generator": "^2.2.4",
+    "mongoose": "^5.9.14"
   },
   "devDependencies": {},
   "scripts": {

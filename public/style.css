@@ -1,9 +1,4 @@
-li {
-font-size: 2rem;
-width: 300px;
-margin: 4px;
-padding: 4px;
-list-style: none
+#ajousterFormAddService{
+  margin-top: 50px;
+  width: 60%;
 }
-.midlaner {background-color: #eeeeee}
-.toplaner {background-color: #ffea00}

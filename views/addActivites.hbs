@@ -1,0 +1,40 @@
+<form class="text-center border border-light p-5" action="/addActivites" method="post" id='ajousterFormAddService'>
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label" >Nom activité </label>
+  <div class="col-10">
+    <input class="form-control" type="text"  id="example-text-input" name="nomActivite">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label" >Categorie activité </label>
+  <div class="col-10">
+    <select class="form-control" id="exampleSelect1" name="catActivite">
+     <option>Categorie 1</option>
+     <option>Categorie 2</option>
+     <option>Categorie 3</option>
+     <option>Categorie 4</option>
+     <option>Categorie 5</option>
+   </select>
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-number-input" class="col-2 col-form-label">Nombre de place</label>
+  <div class="col-10">
+    <input class="form-control" type="number" id="example-number-input" name="nbPlace">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-date-input" class="col-2 col-form-label">Date activite</label>
+  <div class="col-10">
+    <input class="form-control" type="date" id="example-date-input" name="dateActivite">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-date-input" class="col-2 col-form-label">description activite</label>
+  <div class="col-10">
+    <textarea class="form-control" id="exampleTextarea" rows="3" name="descActivite"></textarea>
+  </div>
+</div>
+<button type="submit" class="btn btn-primary">Enregistrer</button>
+
+</form>
