@@ -2,10 +2,13 @@ var express = require('express');
 var route = express.Router();
 var activiteCtrl = require('../controllers/activiteController')
 
-route.get('/addActivites', function(req, res){
-  res.render('addActivites')
+const auth_middleware= require('../middleware/auth_middleware');
+
+
+route.get('/', function(req, res){
+  res.render('addActivites', {layout : 'index_layout'})
 });
 
-route.post('/addActivites', activiteCtrl.addActivites);
+route.post('/', activiteCtrl.addActivites);
 
 module.exports = route;

@@ -62,7 +62,7 @@ exports.login_post = (req, res, next) => {
            res.cookie("token", token,{ maxAge: '3600000' });
 
    //*************Une fois qu'on est authentifié, on est automatiquement redirigé vers la page d'accueil**********************************
-           res.redirect('/');
+           res.redirect('/index_main');
         })
         .catch(error => res.status(500).json({ error }));
     })

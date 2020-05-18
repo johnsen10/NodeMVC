@@ -1,14 +1,20 @@
 const express= require('express');
 
-//const mongoose= require('mongoose');
-
 const app= express();
 
 app.use(express.static('public'));
-var bodyParser = require('body-parser');
-const mongoose= require('mongoose');
-var activite = require('./routes/activite')
 
+const bodyParser = require('body-parser');
+const mongoose= require('mongoose');
+const activite = require('./routes/activite')
+
+const users=require('./routes/users')
+
+const authentication =require('./routes/auth')
+const auth_middleware= require('./middleware/auth_middleware');
+const cookieParser = require("cookie-parser");
+
+app.use(cookieParser());
 
 //Configuration bodyParser
 app.use(bodyParser.json());
@@ -16,11 +22,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.use(express.static('public'));
-//definir lesRoute
-app.use('/', activite);
+
+//*************************DEFINITION DES ROUTES********************************************
+
+app.use('/signup',users );
+
+app.use('/login',authentication );
+
+app.use('/addActivites',auth_middleware, activite);
 
 app.get('/index_main', (req, res) => {
-//Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+
 res.render('index_main', {layout : 'index_layout'});
 });
 

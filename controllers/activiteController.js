@@ -10,6 +10,6 @@ exports.addActivites = (req, res) => {
     ...req.body
   });
   activite.save()
-    .then(()=>res.render('index_main'))
+    .then(()=>res.render('index_main', {layout : 'index_layout'}))
     .catch(error => res.status(400).json({error}));
 }

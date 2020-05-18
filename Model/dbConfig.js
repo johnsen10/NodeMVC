@@ -1,4 +1,6 @@
 var mongoose = require('mongoose')
+require('./activiteModel.js');
+
 
 ///Connexion à la base de donnée
 mongoose.connect('mongodb+srv://kandangkandang:passer123@kandangkandang-ezwcm.mongodb.net/test?retryWrites=true&w=majority',
@@ -7,4 +9,3 @@ mongoose.connect('mongodb+srv://kandangkandang:passer123@kandangkandang-ezwcm.mo
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
-require('./activiteModel.js');
