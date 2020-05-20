@@ -3,6 +3,10 @@ var express = require('express');
 var bodyParser = require('body-parser')
 var Activite = mongoose.model('activite')
 
+exports.addActivites_page= (req, res) => {
+res.render('addActivites', {layout : 'index_layout'});
+}
+
 exports.addActivites = (req, res) => {
   //console.log(req.body);
   //res.send('ok')

@@ -13,7 +13,7 @@ exports.signup = (req, res, next) => {
 
 exports.signup_post= (req, res, next) => {
                        console.log('En cours de creation...')
-                       console.log(req.body)
+                       console.log(req.body.email)
                         bcrypt.hash(req.body.password, 10)
                            .then(hash => {
                              const user = new User({
@@ -27,7 +27,7 @@ exports.signup_post= (req, res, next) => {
                            })
                            .catch(error => res.status(500).json({ error }));
 
-                       res.redirect('/');
+                       res.redirect('/index');
 };
 
 //*********************END INSCRIPTION********************************
@@ -62,7 +62,7 @@ exports.login_post = (req, res, next) => {
            res.cookie("token", token,{ maxAge: '3600000' });
 
    //*************Une fois qu'on est authentifié, on est automatiquement redirigé vers la page d'accueil**********************************
-           res.redirect('/index_main');
+           res.redirect('/index');
         })
         .catch(error => res.status(500).json({ error }));
     })
